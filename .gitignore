@@ -210,3 +210,4 @@ __marimo__/
 exploratory.ipynb
 .ipynb_checkpoints/Exploratory-checkpoint.ipynb
 .ipynb_checkpoints/Final-checkpoint.ipynb
+*.twbr
