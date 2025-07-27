@@ -215,19 +215,17 @@ plt.show()
 Based on the analysis of the aviation incident dataset which focussed on accident frequency, damage severity, and human impact, here are three concrete business recommendations for the Head of the New Aviation Division:
 
 
-### i. Prioritize Aircraft Acquisition of Low-Incidence, Low-Severity Make, I would recommend *Airbus*, *Bellanca* and *Maule*.
-**Rationale**: The analysis indicates that these specific aircraft types exhibit the lowest combined risk profiles (lower number of total incidents, a reduced proportion of severe (destroyed or substantial) damage, and fewer occurrences of fatal or serious injuries. These makes will make the most sense for initial acquisition and hence mitigates the most significant operational, financial, and safety risks associated with entering the aviation sector.
+#### 1. Prioritize Aircraft Acquisition of Low-Incidence, Low-Severity Make, e.g Airbus, Bellanca and Maule.
+**Rationale**: The analysis identifies specific aircraft types with the lowest combined risk profiles, demonstrating fewer incidents, less severe damage, and fewer serious injuries. Acquiring these models directly minimizes operational, financial, and safety risks for the new aviation venture.
 
-**Actionable Step**: Immediately initiate deeper financial and operational due diligence (e.g., total cost of ownership, spare parts availability, pilot training requirements, maintenance schedules) focusing exclusively on these top-tier, low-risk models before expanding the search to other aircraft.
+**Actionable Step**: Immediately commence in-depth financial and operational due diligence, including total cost of ownership and training requirements, exclusively on the identified low-risk aircraft models before broadening the selection.
 
-### ii. Develop and Enforce Rigorous Standard Operating Procedures (SOPs) and Enhanced Pilot Training Curricula Concentrating on        *Takeoff* and *Landing* Phases across the entire fleet.
+#### 2. Develop and Enforce Rigorous Standard Operating Procedures (SOPs) and Enhanced Pilot Training Curricula Concentrating on Takeoff and Landing Phases across the entire fleet.
+**Rationale**: The data consistently reveals that Takeoff and Landing phases are universally vulnerable across all aircraft, making proactive risk mitigation in these areas crucial for maximizing safety dividends.
 
-**Rationale**: Implement Enhanced Training and Operational Procedures Focused on Broad Phase of Flight, e.g., Landing, Takeoff for All Aircraft Acquired, as these Phases Account for the Majority of Incidents Across Most Aircraft Types." Proactive risk mitigation in these areas will yield the greatest safety dividends.
+**Actionable Step**: Design and implement mandatory, recurrent simulator training modules for takeoff and landing scenarios, complemented by strict pilot proficiency checks, to enhance safety during these high-risk flight phases.
 
-**Actionable Step**: Design mandatory, recurrent simulator training modules specifically addressing common incident scenarios during takeoff and landing (e.g., engine failure on takeoff, crosswind landings, go-around procedures). Implement strict pilot proficiency checks and continuous re-evaluation focusing on these high-risk phases, even for experienced aircrew.
-
-### iii. Establish a Robust Risk Monitoring Framework that Continuously Tracks Incident Data for the Acquired Fleet and Develops a     Contingency Fund for Severe Aircraft Damage.
-
-**Rationale**: While historical data informs initial choices, aviation risks are dynamic. A proportion of incidents, even in "low-risk" aircraft, still result in substantial or destroyed damage, indicating significant potential financial exposure. Proactive monitoring identifies emerging risks, and a dedicated fund prepares for inevitable high-cost events.
+##### 3. Establish a Robust Risk Monitoring Framework that Continuously Tracks Incident Data for the Acquired Fleet and Develops a Contingency Fund for Severe Aircraft Damage.
+**Rationale**: Even for low-risk aircraft, aviation risks are dynamic and can lead to significant financial exposure from substantial damage, thus proactive monitoring and a dedicated contingency fund are essential to address emerging and inevitable high-cost incidents.
 
 **Actionable Step**: Implement a system to regularly review updated incident data for the specific makes and models purchased, identifying any new trends or emerging safety alerts. 
