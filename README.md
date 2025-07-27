@@ -174,29 +174,118 @@ plt.show()
 ```
 
 
-    
-![Proportion of Destroyed Damage](Images/output_50_0.png)
-
 #### C. Human Impact: Injury Severity
  * This is about the human cost. High numbers of fatalities or serious injuries indicate a higher "safety risk" profile for an aircraft type.
 
 
 ```python
-# Distribution of Injury Severity in percentage
-injury_distribution = df_filtered['Injury_Severity'].value_counts(normalize=True) * 100
+# Total Injuries by Make requires aggregate of all injury columns
+df_filtered['Total_Injuries'] = df_filtered['Total_Fatal_Injuries'] + df_filtered['Total_Serious_Injuries'] + df_filtered['Total_Minor_Injuries']
+
+total_injuries_by_make = df_filtered.groupby('Make')['Total_Injuries'].sum().nlargest(10)
+
+plt.figure(figsize=(12, 6))
+sns.barplot(x=total_injuries_by_make.values, y=total_injuries_by_make.index, hue=total_injuries_by_make.index, palette='rocket', legend=False)
+plt.title('Top 10 Aircraft Makes by Total Injuries (Aircraft Category: Airplane)')
+plt.xlabel('Total Injuries')
+plt.ylabel('Aircraft Make')
+plt.show()
+```
+    
+![Proportion of Human impact by Aircraft Make ](Images/output_54_0.png)
+
+### D. Operational Context: Purpose of Flight & Broad Phase of Flight
+ * Purpose_of_flight, Weather_Condition and Broad_phase_of_flight will give us insights into the circumstances of accidents.
+   For instance, if a specific aircraft model has a high number of landing accidents, it might suggest a design or operational characteristic that makes landing more challenging for that type.
+
+
+```python
+# Distribution of Purpose of Flight in Incidents
+purpose_distribution = df_filtered['Purpose_of_flight'].value_counts(normalize=True).head(10) * 100
 
 plt.figure(figsize=(10, 6))
-sns.barplot(x=injury_distribution.index, y=injury_distribution.values,  hue = injury_distribution.index, palette='magma', legend=False)
-plt.title('Distribution of Injury Severity')
-plt.xlabel('Injury Severity')
+sns.barplot(x=purpose_distribution.values, y=purpose_distribution.index, hue=purpose_distribution.index, palette='crest', legend=False)
+plt.title('Top 10 Purposes of Flight in Incidents')
+plt.xlabel('Percentage of Incidents')
+plt.ylabel('Purpose of Flight')
+plt.show()
+```
+
+
+```python
+# Distribution of Broad Phase of Flight in Incidents
+phase_distribution = df_filtered['Broad_phase_of_flight'].value_counts(normalize=True).head(10) * 100
+
+plt.figure(figsize=(10, 6))
+sns.barplot(x=phase_distribution.values, y=phase_distribution.index, hue=phase_distribution.index, palette='cubehelix', legend = False)
+plt.title('Top 10 Broad Phases of Flight in Incidents')
+plt.xlabel('Percentage of Incidents')
+plt.ylabel('Broad Phase of Flight')
+plt.show()
+```
+
+
+```python
+# Broad Phase of Flight by Make in the top 10
+# Get the top 10 makes
+top_10_makes = df_filtered['Make'].value_counts().head(10).index
+
+# Filter the DataFrame to include only the top 10 makes
+df_top_10_makes = df_filtered[df_filtered['Make'].isin(top_10_makes)]
+
+Broad_Phase = df_top_10_makes.groupby(['Make', 'Broad_phase_of_flight']).size().unstack(fill_value=0)
+
+# bar chart
+Broad_Phase.plot(kind='bar', stacked=True, figsize=(12, 8))
+
+plt.title('Broad Phase of flight by Aircraft Make (Top 10)')
+plt.xlabel('Broad Phase of flight')
+plt.ylabel('Number of Incidents')
+plt.xticks(rotation=45)
+plt.legend(title='Broad Phase of flight')
+plt.show()
+```
+
+![Broad Phase of Flight Distribution in Incidents](Images/output_59_0.png)
+    
+
+
+
+```python
+# Weather Conditions Impact
+# Distribution of Weather Conditions in Incidents
+weather_distribution = df_filtered['Weather_Condition'].value_counts(normalize=True) * 100
+
+plt.figure(figsize=(8, 5))
+sns.barplot(x=weather_distribution.index, y=weather_distribution.values, hue=weather_distribution.index, palette='cividis',legend= False)
+plt.title('Weather Conditions in Incidents')
+plt.xlabel('Weather Condition')
 plt.ylabel('Percentage of Incidents')
 plt.show()
 ```
 
 
-    
-![Distribution of Injury Severity](Images/output_53_0.png)
-    
+```python
+# Weather Conditions by Make in the top 10
+# Get the top 10 makes
+top_10_makes = df_filtered['Make'].value_counts().head(10).index
+
+# Filter the DataFrame to include only the top 10 makes
+df_top_10_makes = df_filtered[df_filtered['Make'].isin(top_10_makes)]
+
+Weather_condition = df_top_10_makes.groupby(['Make', 'Weather_Condition']).size().unstack(fill_value=0)
+
+# bar chart
+Weather_condition.plot(kind='bar', stacked=True, figsize=(12, 8))
+
+plt.title('Weather Condition by Aircraft Make (Top 10)')
+plt.xlabel('Weather Condition')
+plt.ylabel('Number of Incidents')
+plt.xticks(rotation=45)
+plt.legend(title='Weather Condition')
+plt.show()
+```
+
 
 ## 5. Summary and Interpretation of Findings
 
