@@ -154,8 +154,7 @@ plt.ylabel('Aircraft Make')
 plt.show()
 ```
 
-    
-![png](output_44_0.png)
+ https://github.com/Edinah-O/Phase-1-Project/blob/master/Images/output_44_0.png   
 
 #### B. Severity of Incidents by Aircraft Damage
 * This directly addresses the financial implications of incidents. "Destroyed" or "Substantial" damage means high costs.
