@@ -175,7 +175,7 @@ plt.show()
 
 
     
-![png](output_50_0.png)
+![Proportion of Destroyed Damage](Images/output_50_0.png)
 
 #### C. Human Impact: Injury Severity
  * This is about the human cost. High numbers of fatalities or serious injuries indicate a higher "safety risk" profile for an aircraft type.
@@ -195,7 +195,7 @@ plt.show()
 
 
     
-![png](output_53_0.png)
+![Distribution of Injury Severity](Images/output_53_0.png)
     
 
 ## 5. Summary and Interpretation of Findings
